@@ -1,11 +1,12 @@
 # Weather-api-Openweathermap-bash
 
+Writen in Linux Ubuntu 20.04.2 LTS.
 
 This App is design to be used in the bash terminal. 
 Provides information on weather data taken from "https://openweathermap.org/".
 Provides weather data at a given location.
 
-Data Output:
+# Output
 
 1. Name of the location.
 2. Coordinates (longitude and latitude) (degrees meteorological)
@@ -25,7 +26,7 @@ Data Output:
 			- Direction (degrees meteorological) 
 9. Cloudiness (%)
 
-Usage:
+# Usage
 
 NOTE: Please ensure the config.json is configured with the proper settings.
 
