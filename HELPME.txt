@@ -44,6 +44,7 @@ bash config/weather-config [OPTIONS]
 -c To configure a location.
 -u To configure a unit of measurement (standard, metric, imperial)
 -k To configure an API key.
+-r Read out all the configurations in the terminal.
 
 Enter the following into the terminal:
 
