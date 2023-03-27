@@ -28,7 +28,7 @@ Provides weather data at a given location.
 
 # Usage
 
-NOTE: Please ensure the config.json is configured with the proper settings.
+**NOTE**: Please ensure the config.json is configured with the proper settings.
 
 Once an account was created and also subscribed to the "Current Weather Data" API then,
 API keys can be found using the following link: "https://home.openweathermap.org/api_keys/".
@@ -56,9 +56,9 @@ Enter the following into the terminal:
 
 	bash weather [OPTIONS1] [OPTIONS2]
 
-Options:
+## OPTIONS
 
-NOTE: Only the temperature and wind fields require an extra optional flag. 
+**NOTE**: Only the temperature and wind fields require an extra optional flag. 
 
 -n Get the Name at configured location.
 
