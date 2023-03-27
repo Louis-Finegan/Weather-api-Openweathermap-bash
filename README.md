@@ -41,7 +41,7 @@ API keys can be found using the following link: "https://home.openweathermap.org
 
 Enter the following int othe terminal to configure these settings:
 
-`bash config/weather-config [OPTIONS]`
+	bash config/weather-config [OPTIONS]
 
 -c To configure a location.
 
@@ -53,7 +53,7 @@ Enter the following int othe terminal to configure these settings:
 
 Enter the following into the terminal:
 
-`bash weather [OPTIONS1] [OPTIONS2]`
+	bash weather [OPTIONS1] [OPTIONS2]
 
 Options:
 
