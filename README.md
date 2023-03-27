@@ -11,10 +11,11 @@ Data Output:
 2. Coordinates (longitude and latitude) (degrees meteorological)
 3. Temperature (Standard Kelvin, Metric degrees Celcius and Imperial Fahrenheit):
 			
-			- Current temperature.
-			- Feels like.
-			- Maximum temperature.
-			- Minimum temperature.
+	- Current temperature.
+	- Feels like.
+	- Maximum temperature.
+	- Minimum temperature.
+	
 4. Humidity (%)
 5. Pressure (hPa)
 6. Description.
@@ -40,32 +41,53 @@ API keys can be found using the following link: "https://home.openweathermap.org
 
 Enter the following int othe terminal to configure these settings:
 
-bash config/weather-config [OPTIONS]
+`bash config/weather-config [OPTIONS]`
 
 -c To configure a location.
+
 -u To configure a unit of measurement (standard, metric, imperial)
+
 -k To configure an API key.
+
+-r Read out all the configurations in the terminal.
 
 Enter the following into the terminal:
 
-bash weather [OPTIONS1] [OPTIONS2]
+`bash weather [OPTIONS1] [OPTIONS2]`
 
 Options:
 
 NOTE: Only the temperature and wind fields require an extra optional flag. 
 
 -n Get the Name at configured location.
+
 -l Get the coordinated at the configured location.
+
 -t Get all temperature data at the location.
+
 	-c Get current temperature.
+	
 	-f Get tge feels like temperature.
+	
 	-max Get the maximum temperature.
+	
 	-min Get the minimum temperature.
+	
 -h Get the humidity of the configured location.
+
 -p Get the atmospheric pressure of the configured location.
+
 -d Get the description of the weather at the configured location.
+
 -r Get the rainfall measurement at the configured location.
+
 -w Get all wind data at the configured location.
+
 	-s Get the wind speed at the configured location.
+	
 	-d Get the wind direction at the configured location.
+	
 -c Get the cloudiness at the configured location. 
+
+-- help Get the help guide.
+
