@@ -1,5 +1,5 @@
 {
-  "city": "Ireland",
-  "units": "metric",
-  "api_key": "6d5f594e2cb8638c1fb5873a29ba0837"
+  "city": "YOUR_LOCATION",
+  "units": "YOUR_UNITS",
+  "api_key": "YOUR_API_KEY"
 }
