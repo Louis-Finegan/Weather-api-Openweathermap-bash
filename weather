@@ -58,6 +58,7 @@ NAME=$(echo "${RESPONSE}" | jq -r '.name')
 
 CLOUDS=$(echo "${RESPONSE}" | jq -r '.clouds.all')
 
+# If it fails to connect to the API.
 else
 
 echo -e "http request failed.\nCheck internet connectivity.\nCheck API KEY is correct.\nCheck the config setting are correct in 'config.json'."
@@ -66,6 +67,7 @@ exit 1
 
 fi
 
+# Units.
 if [ "${UNITS}" == "metric" ];then
 units="metric"
 temp_units=" degees Celcius"
@@ -145,9 +147,11 @@ echo "${TEMP}${temp_units}"
 elif [ "$2" == "-f" ];then
 echo "${FEELS_LIKE}${temp_units}"
 
+# maximum temperature
 elif [ "$2" == "-max" ];then
 echo "${MAX}${temp_units}"
 
+# minimum temperature
 elif [ "$2" == "-min" ];then
 echo "${MIN}${temp_units}"
 
@@ -158,27 +162,34 @@ exit 1
 
 fi
 
+# humidity
 elif [ "$1" == "-h" ];then
 echo "${HUMIDITY}%"
 
+# atmospheric pressure
 elif [ "$1" == "-p" ];then
 echo "${PRESSURE}hPa"
 
+# description
 elif [ "$1" == "-d" ];then
 echo "${WEATHER}"
 
+# rainfall
 elif [ "$1" == "-r" ];then
 echo "${RAIN}${small_dist_units}"
 
+# wind info
 elif [ "$1" == "-w" ] && [ -z "$2" ];then
 echo -e "${SPEED}${vel_units}\n${DEG}${dir_units}"
 
 # Check if $1 is `-w` and $2 is not empty
 elif [ "$1" == "-w" ] && [ ! -z "$2" ];then
 
+# wind speed
 if [ "$2" == "-s" ];then
 echo "${SPEED}${vel_units}"
 
+# wind direction
 elif [ "$2" == "-d" ];then
 echo "${DEG}${dir_units}"
 
@@ -187,9 +198,11 @@ echo "Error: $2 is an invalid operand.\nEnter 'weather --help' for more informat
 
 fi
 
+# Cloudiness
 elif [ "$1" == "-c" ];then
 echo "${CLOUDS}%"
 
+# Request help guide
 elif [ "$1" == "--help" ];then
 
 cat $HELP
