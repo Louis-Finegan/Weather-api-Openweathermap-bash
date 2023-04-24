@@ -12,7 +12,17 @@ KEY=$(jq -r '.api_key' $CONFIG)
 # Retrieves city name from config.json
 CITY=$(jq -r '.city' $CONFIG)
 
+# Retrieves unit type from config.json
 UNITS=$(jq -r '.units' $CONFIG)
+
+# Retrieves clear terminal configuration 1 for yes 0 for no
+CLEAR_CONFIG=$(jq -r '.clear_terminal' $CONFIG)
+
+# Retrieves show units configuration
+SHOW_CONFIG=$(jq -r '.show_units' $CONFIG)
+
+# Retrieves verbos configuration
+VERBOSE_CONFIG=$(jq -r '.verbose' $CONFIG)
 
 # Url to openweathermap api
 URL="https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=${UNITS}&appid=${KEY}"
@@ -26,10 +36,19 @@ STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${URL}")
 # Check the http status is a success or 200
 if [ $STATUS -eq 200 ];then
 
-# Clearterminal before showing output.
+# Clear terminal before showing output.
+# Clear terminal is 1
+if [ $CLEAR_CONFIG -eq 1 ];then
 clear
 
+fi
+
+# Welcome message
+# Verbose is 1
+if [ $VERBOSE_CONFIG -eq 1 ];then
 echo -e "Welcome. The weather data provided was taken from Openweathermap current weather API.\n"
+
+fi
 
 # Parse the data set
 TEMP=$(echo "${RESPONSE}" | jq -r '.main.temp')
@@ -67,7 +86,11 @@ exit 1
 
 fi
 
+
 # Units.
+
+# Show units is 1
+if [ $SHOW_CONFIG -eq 1 ];then
 if [ "${UNITS}" == "metric" ];then
 units="metric"
 temp_units=" degees Celcius"
@@ -93,6 +116,15 @@ dist_units="m"
 small_dist_units="mm"
 fi
 
+# Show units is 0
+else
+temp_units=""
+dir_units=""
+vel_units=""
+dist_units=""
+small_dist_units=""
+
+fi
 
 # Check if $1 and $2 are empty or not.
 if [ -z "$1" ] && [ -z "$2" ]; then
@@ -110,16 +142,16 @@ if [ -z "$1" ] && [ -z "$2" ]; then
 	# Clouds (measured in %)
 
 echo -e "Weather data in the ${UNITS} system.\n"
-echo -e "Location: ${NAME}"
-echo -e "Coordinates: longitude: ${LON} latitude: ${LAT}"
-echo -e "Temperature: current: ${TEMP}${temp_units} feels_like: ${FEELS_LIKE}${temp_units}"
-echo -e "Max/Min temperature: max: ${MAX}${temp_units} min: ${MIN}${temp_units}"
-echo -e "Humidity: ${HUMIDITY}%"
-echo -e "Pressure: ${PRESSURE}hPa"
-echo -e "Dsecription: ${WEATHER}"
-echo -e "Rain: ${RAIN}${small_dist_units}"
-echo -e "Wind: speed: ${SPEED}${vel_units} direction: ${DEG}${dir_units}"
-echo -e "Clouds: ${CLOUDS}%\n"
+echo -e "Location:\n\t${NAME}"
+echo -e "Coordinates:\n\tlongitude: ${LON}\n\tlatitude: ${LAT}"
+echo -e "Dsecription:\n\t${WEATHER}"
+echo -e "Temperature:\n\tcurrent: ${TEMP}${temp_units}\n\tfeels_like: ${FEELS_LIKE}${temp_units}"
+echo -e "Max/Min temperature:\n\tmax: ${MAX}${temp_units}\n\tmin: ${MIN}${temp_units}"
+echo -e "Humidity:\n\t${HUMIDITY}%"
+echo -e "Pressure:\n\t${PRESSURE}hPa"
+echo -e "Rain:\n\t${RAIN}${small_dist_units}"
+echo -e "Wind:\n\tspeed: ${SPEED}${vel_units}\n\tdirection: ${DEG}${dir_units}"
+echo -e "Clouds:\n\t${CLOUDS}%\n"
 
 else
 

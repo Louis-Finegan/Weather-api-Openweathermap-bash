@@ -1,5 +1,8 @@
 {
-  "city": "YOUR_LOCATION",
-  "units": "YOUR_UNITS",
-  "api_key": "YOUR_API_KEY"
+	"city": "YOUR_LOCATION",
+	"units": "YOUR_UNITS",
+	"api_key": "YOUR_API_KEY",
+	"clear_terminal": 0,
+  "show_units": 0,
+  "verbose": 0
 }

@@ -10,20 +10,14 @@ Provides weather data at a given location.
 
 1. Name of the location.
 2. Coordinates (longitude and latitude) (degrees meteorological)
-3. Temperature (Standard Kelvin, Metric degrees Celcius and Imperial Fahrenheit):
-			
-	- Current temperature.
-	- Feels like.
-	- Maximum temperature.
-	- Minimum temperature.
-	
+3. Temperature (Standard Kelvin, Metric degrees Celcius and Imperial Fahrenheit): Current temperature, Feels like, Maximum temperature and the Minimum temperature.
 4. Humidity (%)
 5. Pressure (hPa)
 6. Description.
 7. Rainfall (mm)
 8. Wind:
-			- Wind Speed (Standard and Metric m/s, Imperial mph)
-			- Direction (degrees meteorological) 
+- Wind Speed (Standard and Metric m/s, Imperial mph)
+- Direction (degrees meteorological) 
 9. Cloudiness (%)
 
 # Usage
@@ -35,10 +29,14 @@ API keys can be found using the following link: "https://home.openweathermap.org
 
 
 {
-	city: "YOUR_LOCATION",
-	units: "YOUR_UNITS",
-	api_key: "YOUR_API_KEY"
+	"city": "YOUR_LOCATION",
+	"units": "YOUR_UNITS",
+	"api_key": "YOUR_API_KEY",
+	"clear_terminal": 0,
+  	"show_units": 0,
+  	"verbose": 0
 }
+
 
 Enter the following int othe terminal to configure these settings:
 
@@ -49,6 +47,12 @@ Enter the following int othe terminal to configure these settings:
 -u To configure a unit of measurement (standard, metric, imperial)
 
 -k To configure an API key.
+
+-clear To configure the clear terminal setting (on by default)
+
+-show-units To configure the show units setting (on by defalt) if off the units will not appear beside the quantity printed in the terminal.
+
+-verbose To switch on and off the welcome message printed when the program begins running (on by default)
 
 -r Read out all the configurations in the terminal.
 
@@ -66,13 +70,13 @@ Enter the following into the terminal:
 
 -t Get all temperature data at the location.
 
-	-c Get current temperature.
+-t -c Get current temperature.
 	
-	-f Get tge feels like temperature.
+-t -f Get tge feels like temperature.
 	
-	-max Get the maximum temperature.
+-t -max Get the maximum temperature.
 	
-	-min Get the minimum temperature.
+-t -min Get the minimum temperature.
 	
 -h Get the humidity of the configured location.
 
@@ -84,11 +88,11 @@ Enter the following into the terminal:
 
 -w Get all wind data at the configured location.
 
-	-s Get the wind speed at the configured location.
+-w -s Get the wind speed at the configured location.
 	
-	-d Get the wind direction at the configured location.
+-w -d Get the wind direction at the configured location.
 	
 -c Get the cloudiness at the configured location. 
 
--- help Get the help guide.
+--help Get the help guide.
 

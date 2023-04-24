@@ -35,6 +35,9 @@ API keys can be found using the following link: "https://home.openweathermap.org
 	city: "YOUR_LOCATION",
 	units: "YOUR_UNITS",
 	api_key: "YOUR_API_KEY"
+	"clear_terminal": 1,
+  	"show_units": 1,
+  	"verbose": 1
 }
 
 Enter the following int othe terminal to configure these settings:
@@ -44,6 +47,9 @@ bash config/weather-config [OPTIONS]
 -c To configure a location.
 -u To configure a unit of measurement (standard, metric, imperial)
 -k To configure an API key.
+-clear to configure the clear terminal setting (on by default)
+-show-units to configure the show units setting (on by defalt) if off the units will not appear beside the quantity printed in the terminal.
+-verbose to switch on and off the welcome message printed when the program begins running (on by default)
 -r Read out all the configurations in the terminal.
 
 Enter the following into the terminal:
