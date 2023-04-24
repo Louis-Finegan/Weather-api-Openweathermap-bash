@@ -27,7 +27,7 @@ Provides weather data at a given location.
 Once an account was created and also subscribed to the "Current Weather Data" API then,
 API keys can be found using the following link: "https://home.openweathermap.org/api_keys/".
 
-
+<pre><code>
 {
 	"city": "YOUR_LOCATION",
 	"units": "YOUR_UNITS",
@@ -36,7 +36,7 @@ API keys can be found using the following link: "https://home.openweathermap.org
   	"show_units": 0,
   	"verbose": 0
 }
-
+</code></pre>
 
 Enter the following int othe terminal to configure these settings:
 
