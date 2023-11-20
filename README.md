@@ -2,7 +2,7 @@
 
 Writen in Linux Ubuntu 20.04.2 LTS.
 
-This App is design to be used in the bash terminal. 
+This App is designed to be used in the bash terminal. 
 Provides information on weather data taken from "https://openweathermap.org/".
 Provides weather data at a given location.
 
