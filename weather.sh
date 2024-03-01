@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Config.json file
 CONFIG="config/config.json"
 
