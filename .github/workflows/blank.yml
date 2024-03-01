@@ -34,7 +34,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run script
-        run: bash weather
+        run: bash weather.sh
 
 
       - name: Commit and push changes
