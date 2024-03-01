@@ -32,5 +32,5 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add .
           git commit -m "Push after test"
-          git push
+          git push origin HEAD:main
 
